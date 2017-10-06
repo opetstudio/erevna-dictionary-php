@@ -23,10 +23,15 @@ COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
 WORKDIR /var/www/src
 
 
-#RUN npm install
-
 # Bundle app source
+# RUN rm -rf *
 COPY ./src .
+
+COPY composer.json ../
+
+RUN cd .. && curl -sS https://getcomposer.org/installer | php && php composer.phar install
+
+#RUN php composer.phar install
 
 EXPOSE 80
 EXPOSE 443

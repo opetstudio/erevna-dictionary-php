@@ -1,11 +1,14 @@
 version: "3"
 services:
-  web:
+  webdictionary:
     image: opetstudio/erevna-dictionary-php:201710
     ports:
-      - "4001:80"
+      - "4002:80"
     volumes:
       - ./log:/var/log/apache2
+    environment:
+      - PHP_ENV=production
+      # - ./src:/var/www/src
     # web:
     #     build: .
     #     ports:

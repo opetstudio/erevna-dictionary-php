@@ -1,0 +1,15 @@
+{
+    "name": "opetstudio/erevna-dictionary-php",
+    "authors": [
+        {
+            "name": "Nofrets",
+            "email": "opetstudio@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "~6.0"
+    },
+    "autoload": {
+        "psr-4": {"Acme\\": "src/"}
+    }
+}

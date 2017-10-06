@@ -1,2 +1,0 @@
-RewriteEngine on
-RewriteRule ^/erevna-dictionary-php/news/([0-9]+)\.html /index.php/$1
