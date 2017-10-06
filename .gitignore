@@ -3,3 +3,4 @@ log/
 ._*
 .DS_Store
 src/env.json
+vendor/
