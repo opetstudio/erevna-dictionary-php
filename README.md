@@ -23,3 +23,7 @@ API dictionary
     response:
 
       {"status":true,"text":"apt","meaning":"apartment","trxunixtime":"423232","country":"id"}
+
+  e.g:
+
+    http://51.15.12.153:4002/index.php?text=rmassss&trxunixtime=423232&country=id&keyfrom=dictionaryPropertycategory

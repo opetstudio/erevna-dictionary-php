@@ -66,13 +66,21 @@
       $opt->country = $country;
       $opt->keyfrom = $keyfrom;
       $opt->text = $text;
-      $meaning = $self->getMeaningOfText($opt);
+      $source = $self->getMeaningOfText($opt);
+      if($source != null) {
+        $meaning = $source->meaning;
+        $foreignkey = $source->foreignkey; //foreignkey
+      } else {
+        $meaning = "";
+        $foreignkey = "";
+      }
 
       //output
       $myObj = new \stdClass();
       $myObj->status = $status;
       $myObj->text = $text;
       $myObj->meaning = $meaning;
+      $myObj->foreignkey = $foreignkey;
       $myObj->trxunixtime = $trxunixtime;
       $myObj->country = $country;
 
@@ -100,11 +108,12 @@
           $json = json_decode($body);
           // echo $body;
           if($json->status==1){
-            return $json->resultSearch->_source->meaning;
+            return $json->resultSearch->_source;
+            // return $json->resultSearch->_source->meaning;
             // echo "status success";
           } else {
             // echo "status gagal";
-            return $text;
+            return null;
           }
           // echo $json->resultSearch->_index;
           // Explicitly cast the body to a string
@@ -121,7 +130,7 @@
           }
       }
 
-      return "";
+      return null;
     }
   }
 ?>

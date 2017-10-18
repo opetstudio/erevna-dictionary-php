@@ -26,10 +26,13 @@ WORKDIR /var/www/src
 # Bundle app source
 # RUN rm -rf *
 COPY ./src .
+ADD src /var/www/src
+ADD vendor /var/www/vendor
+#COPY vendor /var/www/
 
-COPY composer.json ../
+COPY composer.json /var/www/
 
-RUN cd .. && curl -sS https://getcomposer.org/installer | php && php composer.phar install
+#RUN cd .. && curl -sS https://getcomposer.org/installer | php && php composer.phar install
 
 #RUN php composer.phar install
 
