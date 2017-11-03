@@ -26,4 +26,4 @@ API dictionary
 
   e.g:
 
-    http://51.15.12.153:4002/index.php?text=rmassss&trxunixtime=423232&country=id&keyfrom=dictionaryPropertycategory
+    http://xxxx153:4002/index.php?text=rmassss&trxunixtime=423232&country=id&keyfrom=dictionaryPropertycategory
